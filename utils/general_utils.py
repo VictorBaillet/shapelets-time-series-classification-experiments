@@ -63,3 +63,33 @@ def sort_a_and_reorder_b(a, b):
     reordered_b = b[sorted_indices]
 
     return sorted_a, reordered_b
+
+def generate_synthetic_dataset(noise=1.5):
+    N_train = 100 ## Number of time series in the train and test dataset
+    N_test = 1000
+    k = 50 ## Length of each time series 
+    motif_1 = np.concatenate((np.zeros(2), 7*np.ones(14), np.zeros(2)))
+    motif_2 = np.concatenate((np.zeros(2), (np.arange(8)), (6 - np.arange(7)), np.zeros(1),))
+    x_train = noise*np.random.randn(N_train, k)
+    x_test = noise*np.random.randn(N_test, k)
+    y_train = np.zeros(N_train)
+    y_test = np.zeros(N_test)
+    max_motif_length = max(len(motif_1), len(motif_2))
+    
+    for i in range(N_train):
+        idx = np.random.randint(k-max_motif_length-1)
+        if i <= N_train//2:
+            x_train[i][idx:idx+len(motif_1)] += motif_1
+        else:
+            y_train[i] = 1
+            x_train[i][idx:idx+len(motif_2)] += motif_2
+            
+    for i in range(N_test):
+        idx = np.random.randint(k-max_motif_length-1)
+        if i <= N_test//2:
+            x_test[i][idx:idx+len(motif_1)] += motif_1
+        else:
+            y_test[i] = 1
+            x_test[i][idx:idx+len(motif_2)] += motif_2
+
+    return x_train, y_train, x_test, y_test
