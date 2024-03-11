@@ -13,7 +13,7 @@ This repository contains code and experiments related to time series classificat
 
 ## Introduction
 
-This repository focuses on shapelet-based time series classification. Running `demo.ipynb` is an easy and fast way to explore our project's capabilities.
+This repository focuses on shapelet-based time series classification. Running `demo.ipynb` is an easy and fast way to explore our project's capabilities. Additionally, you can experiment with our [Ipol demo](https://ipolcore.ipol.im/demo/clientApp/demo.html?id=5555512102001&key=A3B5F151D23336119209FE73FDF2BE88). 
 
 ## Contents
 
@@ -31,7 +31,7 @@ To reproduce or extend the experiments, follow these steps:
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone ""
+   git clone https://github.com/VictorBaillet/shapelets-time-series-classification-experiments.git
    cd shapelets-time-series-classification-experiments
    ```
 
