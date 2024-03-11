@@ -1,14 +1,6 @@
 import numpy as np
 import argparse
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-from sklearn.naive_bayes import GaussianNB
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.tree import DecisionTreeClassifier
-import random
 
 from utils.shapelets_transform import *
 from utils.quality_measures import *
