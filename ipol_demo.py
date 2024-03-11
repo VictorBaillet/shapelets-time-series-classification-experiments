@@ -37,4 +37,4 @@ if __name__ == '__main__':
     parser.add_argument('--n_shapelet', type=int, default=100,)
     args = parser.parse_args()
 
-    save_NFAs(args)
+    main(args)
